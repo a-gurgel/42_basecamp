@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush.c                                             :+:      :+:    :+:   */
+/*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbaldino <hbaldino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: arebecca <arebecca@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 18:15:03 by hbaldino          #+#    #+#             */
-/*   Updated: 2021/04/03 20:34:00 by hbaldino         ###   ########.fr       */
+/*   Updated: 2021/04/03 22:10:27 by arebecca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,19 @@ void	rush(int coluna, int linha)
 		coluna = 1;
 		while (coluna <= ult_coluna)
 		{
-			if (coluna == 1)
+			if (coluna == 1 || coluna == ult_coluna) // tratanto os cantos do retangulo A e C
 			{
-				if (linha > 1 && linha < ult_linha)
-				{
-					ft_putchar('B');
-				}
-				else
+				if (coluna == 1 && (linha == 1 || linha == ult_linha))
 				{
 					ft_putchar('A');
+				}
+				else if (coluna == ult_coluna && (linha == 1 || linha == ult_linha))
+				{
+					ft_putchar('C');
+				}
+				else // tratando as bordas da primeira e ultima coluna
+				{
+					ft_putchar('F');
 				}
 			}
 			else if (coluna > 1 && coluna < ult_coluna)
@@ -45,17 +49,6 @@ void	rush(int coluna, int linha)
 				else
 				{
 					ft_putchar('B');
-				}
-			}
-			else if (coluna == ult_coluna)
-			{
-				if (linha > 1 && linha < ult_linha)
-				{
-					ft_putchar('B');
-				}
-				else
-				{
-					ft_putchar('C');
 				}
 			}
 			else if (linha == ult_linha)
