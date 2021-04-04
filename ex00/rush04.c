@@ -6,7 +6,7 @@
 /*   By: lxavier- <lxavier-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 18:15:03 by hbaldino          #+#    #+#             */
-/*   Updated: 2021/04/04 06:29:36 by lxavier-         ###   ########.fr       */
+/*   Updated: 2021/04/04 16:34:30 by lxavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	lateral_columns(int column, int line, int last_column, int last_line)
 	{
 		ft_putchar('C');
 	}
-	else if (column == last_column && line == 1 )
+	else if (column == last_column && line == 1)
 	{
 		ft_putchar('C');
 	}
