@@ -3,61 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebecca <arebecca@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lxavier- <lxavier-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 18:15:03 by hbaldino          #+#    #+#             */
-/*   Updated: 2021/04/03 22:10:27 by arebecca         ###   ########.fr       */
+/*   Updated: 2021/04/04 01:00:45 by lxavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	rush(int coluna, int linha)
+void	rush(int column, int line)
 {
-	int ult_coluna;
-	int ult_linha;
+	int last_column;
+	int last_line;
 
-	ult_coluna = coluna;
-	ult_linha = linha;
-	linha = 1;
-	while (linha <= ult_linha)
+	last_column = column;
+	last_line = line;
+	line = 1;
+	while (line <= last_line)
 	{
-		coluna = 1;
-		while (coluna <= ult_coluna)
+		column = 1;
+		while (column <= last_column)
 		{
-			if (coluna == 1 || coluna == ult_coluna) // tratanto os cantos do retangulo A e C
+			// esses dois ifs cuidam dos cantos do retangulo
+			if (column == 1 && (line == 1 || line == last_line))
 			{
-				if (coluna == 1 && (linha == 1 || linha == ult_linha))
-				{
-					ft_putchar('A');
-				}
-				else if (coluna == ult_coluna && (linha == 1 || linha == ult_linha))
-				{
-					ft_putchar('C');
-				}
-				else // tratando as bordas da primeira e ultima coluna
-				{
-					ft_putchar('F');
-				}
+				ft_putchar('A');
 			}
-			else if (coluna > 1 && coluna < ult_coluna)
+			else if (column == last_column && (line == 1 || line == last_line))
 			{
-				if (linha > 1 && linha < ult_linha)
+				ft_putchar('C');
+			}
+			// tratando as bordas da primeira e ultima coluna
+			else if (column == 1 || column == last_column) 
+			{			
+				ft_putchar('F');
+			}
+			
+			// tratando o recheio
+			else if (column > 1 && column < last_column)
+			{
+				if (line > 1 && line < last_line)
 				{
 					ft_putchar(' ');
 				}
-				else
+				else // line == 1 || line == last_line
 				{
 					ft_putchar('B');
 				}
 			}
-			else if (linha == ult_linha)
-			{
-				ft_putchar('A');
-			}
-			coluna++;
+			column++;
 		}
 		ft_putchar('\n');
-		linha++;
+		line++;
 	}
 }
