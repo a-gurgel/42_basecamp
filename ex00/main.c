@@ -6,7 +6,7 @@
 /*   By: lxavier- <lxavier-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:07:26 by hbaldino          #+#    #+#             */
-/*   Updated: 2021/04/04 06:18:18 by lxavier-         ###   ########.fr       */
+/*   Updated: 2021/04/04 22:22:32 by lxavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@ void	rush(int coluna, int linha);
 
 int		main(void)
 {
-	rush(5 ,5);
+	rush(4 ,5);
 	return (0);
 }

@@ -1,0 +1,31 @@
+# Declaring the main func
+function run_rush_compiled (){ 
+    gcc -Wall -Wextra -Werror rush0"$1".c main.c ft_putchar.c -o rush0"$1"_test0"$2".out
+    chmod +x rush0"$1"_test0"$2".out
+    ./rush0"$1"_test0"$2".out
+    }
+
+# mod main
+function run_mod_main (){ 
+    echo -e "===== Test rush ("$1", "$2") ====="
+    sed -i "s/rush([0-9], [0-9])/rush("$1", "$2")/g" main.c
+    }
+
+# Main loop
+for i in $(ls rush*.c | sed -e 's/.c$//g' -e 's/rush0//g'); do
+echo "------------------- Rush 0"$i" -------------------"
+
+    run_mod_main 1 1 
+    run_rush_compiled $i 1
+
+    run_mod_main 1 5 
+    run_rush_compiled $i 2
+
+    run_mod_main 5 1 
+    run_rush_compiled $i 3
+
+    run_mod_main 5 5 
+    run_rush_compiled $i 4
+
+done
+unset run_rush_compiled run_mod_main
