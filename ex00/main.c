@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lxavier- <lxavier-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: hbaldino <hbaldino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 15:07:26 by hbaldino          #+#    #+#             */
-/*   Updated: 2021/04/04 01:22:48 by lxavier-         ###   ########.fr       */
+/*   Updated: 2021/04/04 02:02:43 by hbaldino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@ void	rush(int coluna, int linha);
 
 int		main(void)
 {
-	rush(25, 7);
+	rush(5, 5);
 	return (0);
 }
